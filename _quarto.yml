@@ -10,7 +10,7 @@ website:
     title: "MUSA 550"
     left:
       - text: "Home"
-        href: home.qmd
+        href: index.qmd
       - text: "Thoughts"
         href: thoughts.qmd
       - text: "Analysis"
