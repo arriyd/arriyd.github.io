@@ -1,0 +1,17 @@
+---
+title: "Frequently Asked Question"
+toc: false
+---
+
+<div style="display: flex; gap: 10px; align-items: flex-start; flex-direction: column;">
+<div style="display: flex; gap: 10px; align-items: flex-start;">
+
+<div>
+<br>
+**Why does the number of acres of forest loss keep counting even when I reload the page? Why doesn’t it reset to 0?**
+
+The forest loss counter stores its data in your browser's local storage. If you want to reset it to 0, you can clear your browser cache.
+Remember that stopping deforestation requires consistent efforts—<i>just like clearing your cache requires action on your part.</i>
+
+
+</div>

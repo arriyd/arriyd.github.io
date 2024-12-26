@@ -1,0 +1,76 @@
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+  console.log("Script loaded and DOM is ready");
+
+
+  // Constants
+  const acresPerField = 1.32; // Average size of a football field in acres
+  const countdownDuration = 7; // Duration of the countdown in seconds
+  const circleCircumference = 2 * Math.PI * 60; // Circumference of the progress circle (r = 60)
+
+  // Retrieve stored values or initialize them
+  let startTime = localStorage.getItem("startTime");
+  let totalFieldsLost = localStorage.getItem("totalFieldsLost")
+    ? parseInt(localStorage.getItem("totalFieldsLost"))
+    : 0;
+
+  if (!startTime) {
+    startTime = Date.now();
+    localStorage.setItem("startTime", startTime);
+  }
+
+  // Function to update the display based on elapsed time
+  function updateDisplay() {
+    const now = Date.now();
+    const elapsedSeconds = Math.floor((now - startTime) / 1000);
+
+    // Calculate fields lost
+    const fieldsLost = Math.floor(elapsedSeconds / countdownDuration);
+    totalFieldsLost = fieldsLost;
+
+    // Calculate acres lost
+    const totalAcresLost = (totalFieldsLost * acresPerField).toFixed(2);
+
+    // Update total acres on the page
+    const totalAcresElement = document.getElementById("total-acres");
+    if (totalAcresElement) {
+      totalAcresElement.textContent = totalAcresLost;
+    }
+
+    // Update navbar total acres
+    const navbarTotalAcres = document.getElementById("navbar-total-acres");
+    if (navbarTotalAcres) {
+      navbarTotalAcres.textContent = totalAcresLost;
+    }
+
+    // Update the countdown timer
+    const countdownValue = countdownDuration - (elapsedSeconds % (countdownDuration));
+    const timerElement = document.getElementById("timer");
+    if (timerElement) {
+      timerElement.textContent = countdownValue-1;
+    }
+
+    // Update the circular progress bar
+    const progressElement = document.getElementById("progress");
+    if (progressElement) {
+      
+      if (countdownValue === countdownDuration) {
+        // If the countdown just reset, immediately switch the bar to gray
+        progressElement.style.transition = "none"; // Disable transition
+        progressElement.style.strokeDashoffset = circleCircumference; // Full gray circle
+        progressElement.style.stroke = "#ccc"; // Gray color
+      } else {
+        const progressOffset = (circleCircumference*(countdownValue-1)) / countdownDuration;
+        progressElement.style.transition = "stroke-dashoffset 1s linear"; // Re-enable smooth transition
+        progressElement.style.strokeDashoffset = progressOffset;
+        progressElement.style.stroke = "#007bff"; // Blue color
+    }}
+    // Save updated fields lost to localStorage
+    localStorage.setItem("totalFieldsLost", totalFieldsLost);
+  }
+
+  // Update the display every second
+  updateDisplay();
+  setInterval(updateDisplay, 1000);
+  })
+  </script>

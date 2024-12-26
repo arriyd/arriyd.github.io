@@ -1,0 +1,56 @@
+---
+title: "Re-rethinking the causes of deforestation: does the theory evolve?"
+subtitle: "MUSA 550: Geospatial Data Science with Python, Fall 2024 <br> Desra Arriyadi, Master of Environmental Studies"
+---
+
+<style>
+  #progress {
+    transition: stroke-dashoffset 1s linear; /* Smooth transition for the progress bar */
+  }
+
+  #circle-bar {
+    border-color: #ccc; /* Background border color */
+  }
+
+  #countdown-container {
+    text-align: center;
+    font-size: 1.5rem;
+    margin: 2rem 0;
+  }
+
+  #circle-timer {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    margin: 0 auto;
+  }
+</style>
+
+::: {#countdown-container}
+<p>Another football field of forest will be lost in:</p>
+<div id="circle-timer">
+  <svg style="transform: rotate(-90deg);" width="150" height="150">
+    <circle cx="75" cy="75" r="60" stroke="#ccc" stroke-width="8" fill="none" />
+    <circle
+      id="progress"
+      cx="75"
+      cy="75"
+      r="60"
+      stroke="#007bff"
+      stroke-width="8"
+      fill="none"
+      stroke-dasharray="377"
+      stroke-dashoffset="377"
+    />
+  </svg>
+  <h1 id="timer" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 2rem; margin: 0;">6</h1>
+</div>
+:::
+
+<div id="accumulation" style="text-align: center; font-size: 1rem; margin: 2rem auto; border: 1px solid #ccc; padding: 1rem; width: 350px;">
+  <p>Forest loss since you opened this page: <span id="total-acres">0</span> acres</p>
+</div>
+\
+<div style="text-align: right; font-size: 12px; margin: 10px;">
+  [information](https://www.wri.org/insights/we-lost-football-pitch-primary-rainforest-every-6-seconds-2019)
+</div>

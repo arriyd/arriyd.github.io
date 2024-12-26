@@ -1,0 +1,101 @@
+---
+title: "Findings"
+toc: false
+---
+
+<style>
+  .parallax-container {
+    position: relative;
+    overflow: hidden;
+    height: 500px; /* Adjust height as desired */
+  }
+
+  .parallax-video-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%; /* Ensures it fills the container */
+    width: 100%; /* Ensures it fills the container */
+    object-fit: cover; /* Ensures video scales properly */
+    z-index: -1; /* Keeps it behind other content */
+  }
+</style>
+
+<!-- Parallax Section -->
+<div class="parallax-container">
+  <video class="parallax-video-container" autoplay muted loop>
+    <source src="images/defo.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+</div>
+
+<div style="display: flex; gap: 10px; align-items: flex-start; flex-direction: column;">
+<div style="display: flex; gap: 10px; align-items: flex-start;">
+
+<div>
+<div style="text-align: right; font-size: 12px; margin: 10px;">
+  &copy;Video by Desra
+</div>
+
+<div style="display: flex; gap: 10px; align-items: flex-start; flex-direction: column;">
+<div style="display: flex; gap: 10px; align-items: flex-start;">
+
+<div>
+
+<div style="border: 1px solid #ccc; padding: 15px; border-radius: 5px;">
+**Main findings focused on Feature Importance.**\
+\
+Brazil, subsidies and other transfers, and agricultural land were the most significant contributors to deforestation among all variables.\
+\
+<center>
+  <img src="images/visualization.svg" alt="Visualization" style="width: 70%; border-radius: 5px; margin-top: 20px;">
+</center>
+\
+In the Random Forest analysis, the feature "Country_Brazil" has high importance, not simply because Brazil has a large forest area, but because its deforestation trends are highly variable and strongly influenced by other factors like agricultural subsidies, political policies, and enforcement of conservation laws. For instance, Brazil experienced a deforestation peak in 2004 when 27,772 km² of forests were cleared (equivalent to the size of Massachusetts), followed by a decline during years with stricter policies (Silva Junior et al. 2021). This variability in deforestation rates makes Brazil-specific data critical in understanding global deforestation trends. Similarly, countries like Paraguay and Tanzania also rank highly due to their distinct patterns, such as agricultural expansion or population pressures, which uniquely influence their forest loss dynamics.\
+\
+By defintion, Subsidies and Other Transfers benefits include all unrequited, nonrepayable transfers on current account to private and public enterprises; grants to foreign governments, international organizations, and other government units; and social security, social assistance benefits, and employer social benefits in cash and in kind. According to Amaglobeli et al. (2024), Agricultural producer subsidies are prevalent, large, and deployed to achieve diverse and, at times, overlapping policy objectives. Among countries accounting for 90 percent of global GDP, food and agriculture subsidies amount to 0.3–0.7 percent of GDP over the past decade and a half. As highlighted by Damania et al. (2023), highlighted inefficiency of agricultural and timber subsidies. Between 2016 and 2018, $635 billion per year (equals approximately 0.9 percent of GDP and nearly one-fifth of agricultural value added for these countries) was given as support to agriculture in 84 countries. 71% of this support went directly to farmers or producers, mainly in ways that encouraged them to produce more or use certain inputs, which can influence their decisions on what and how much to produce. This type of support often encourage unsustainable practices, such as excessive use of chemical fertilizers and pesticides, which lead to greenhouse gas emissions, land degradation, and biodiversity loss. Similarly, timber subsidies contribute to overharvesting, illegal logging, and forest degradation. They distort markets by making sustainable forest management less competitive than subsidized, unsustainable logging.\
+\
+The feature Agricultural Land (sq. km) emerges as one of the most significant contributors to deforestation in the feature importance analysis. This result is in line with finding from Hosonuma et al. (2012). Commercial agriculture is the most important driver of deforestation, followed by subsistence agriculture. Their study showed agriculture alone causes 73% of all deforestation. 40% of deforestation and most prominent in the early-transition phase. The other important land use is local/subsistence agriculture, which is related to 33% of deforestation.\
+\
+Other factors that stand out in the analysis are governance and economic indicators, which reveal intriguing relationships with deforestation. For instance, control of corruption shows a notable connection to deforestation, suggesting that governance quality significantly influences how natural resources are managed. In regions with poor governance and high corruption, illegal logging, weak enforcement of environmental regulations, and unsustainable land-use practices are more prevalent, exacerbating deforestation rates. Conversely, better governance often correlates with stronger protections and more sustainable practices.\
+\
+Another compelling factor is debt service on external debt, which indicates the economic pressures faced by nations. When a country allocates a significant portion of its resources toward debt repayment, it may prioritize short-term economic gains, such as expanding agricultural exports or extracting natural resources, to generate revenue. This often results in deforestation as forests are cleared to make way for cash crops or logging operations. Together, these governance and economic factors underline the complex, interconnected pressures that drive deforestation, pointing to the need for policies that address systemic issues like corruption and economic vulnerability to protect forests effectively.\
+\
+</div>
+\
+<div style="border: 2px solid #005f73; padding: 20px; background-color: #f0f9ff; border-radius: 8px; margin: 20px 0;">
+**Contemplation**\
+\
+Over time, the theory of deforestation has evolved, moving from simplistic explanations centered on population growth and agricultural expansion to more nuanced, multidimensional frameworks. Earlier models, like those discussed by Angelsen and Kaimowitz (1999), focused on economic drivers and agent-based decision-making, emphasizing variables such as land-use choices, macroeconomic pressures, and policy instruments. Recent research has expanded these perspectives by incorporating the roles of governance, global trade, climate change, and spatial dynamics. Studies now recognize deforestation as a complex phenomenon influenced by intertwined local and global factors, such as subsidies driving unsustainable agricultural practices, corruption weakening forest protections, and international markets shaping land-use patterns. This evolution reflects a shift toward systems-level thinking, which integrates biophysical, socioeconomic, and governance dimensions. Thus, while foundational theories remain relevant, contemporary approaches offer a deeper, more holistic understanding of deforestation, better equipping policymakers to address its underlying and immediate causes in an increasingly interconnected world.\
+\
+\
+<p style="text-align: right; font-style: italic;">
+    What we are doing to the forests of the world is but a mirror reflection of what we are doing to ourselves and to one another.<br>
+    <strong>~ Mahatma Gandhi</strong>
+  </p>
+</div>
+\
+<div style="border: 1px solid #ccc; padding: 15px; border-radius: 5px;">
+**Additional discussions**\
+\
+**Prediction**\
+Although my analysis included predicting deforestation using socioeconomic factors with a Random Forest model, I believe that relying solely on these factors for such predictions may lack a solid logical foundation. Socioeconomic variables, while insightful, typically act as indirect drivers or proxies rather than immediate causes of deforestation. This perspective aligns with the framework proposed by Angelsen and Kaimowitz (1999), my main reference, which emphasizes the importance of analyzing deforestation through a more comprehensive approach. Their framework suggests considering the magnitude and location of deforestation, the agents involved, the variables influencing their choices, the decision parameters of these agents, as well as macroeconomic variables and policy instruments. A logical approach, as outlined in their work, involves understanding deforestation at three interconnected levels: sources, immediate causes, and underlying causes. By focusing only on socioeconomic factors, key dimensions such as the direct actions of deforestation agents (e.g., farmers or loggers), the biophysical constraints, and the specific policy environment might be overlooked.\
+\
+**Optimization**\
+The initial Random Forest model achieved an R² score of 0.67 on the testing dataset, indicating that 67% of the variance in the target variable was explained by the model. Using 3-fold cross-validation, the R² scores varied between 0.85, 0.71, and 0.56, with an average score of 0.71 and a standard deviation of 0.12, highlighting moderate variability in model performance across different folds. After optimizing the model using GridSearchCV, the testing R² score remained unchanged at 0.67. However, the 3-fold cross-validation scores showed slight improvement, with individual scores of 0.86, 0.74, and 0.56. This resulted in an increased average cross-validation score of 0.72, while the standard deviation remained at 0.12.\
+</div>
+\
+<div style="border: 1px solid #ccc; padding: 15px; border-radius: 5px;">
+**References**\
+\
+Amaglobeli, D. (2024). Agricultural producer subsidies. IMF Notes, 2024(002), 1. [https://doi.org/10.5089/9798400285950.068](https://doi.org/10.5089/9798400285950.068).\
+\
+Angelsen, A., & Kaimowitz, D. (1999). Rethinking the Causes of Deforestation: Lessons from Economic Models. The World Bank Research Observer, 14(1), 73–98. [https://doi.org/10.1093/wbro/14.1.73](https://doi.org/10.1093/wbro/14.1.73).\
+\
+Damania, R., Balseca, E., De Fontaubert, C., Gill, J., Kim, K., Rentschler, J., Russ, J., & Zaveri, E. (2023). Detox development. [https://doi.org/10.1596/978-1-4648-1916-2](https://doi.org/10.1596/978-1-4648-1916-2).\
+\
+Hosonuma, N., Herold, M., De Sy, V., De Fries, R. S., Brockhaus, M., Verchot, L., Angelsen, A., & Romijn, E. (2012). An assessment of deforestation and forest degradation drivers in developing countries. Environmental Research Letters, 7(4), 044009. [https://doi.org/10.1088/1748-9326/7/4/044009](https://doi.org/10.1088/1748-9326/7/4/044009).\
+\
+Silva Junior, C. H. L., Pessôa, A. C. M., Carvalho, N. S., et al. (2021). The Brazilian Amazon deforestation rate in 2020 is the greatest of the decade. Nature Ecology & Evolution, 5(2), 144–145. [https://doi.org/10.1038/s41559-020-01368-x](https://doi.org/10.1038/s41559-020-01368-x).\
+</div>
+</div>

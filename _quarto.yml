@@ -1,0 +1,39 @@
+project:
+  type: website
+  output-dir: docs
+  preview:
+    port: 3333
+
+website:
+  title: "MUSA 550"
+  navbar:
+    title: "MUSA 550"
+    left:
+      - text: "Home"
+        href: home.qmd
+      - text: "Thoughts"
+        href: thoughts.qmd
+      - text: "Analysis"
+        href: analysis/Final_project.ipynb
+      - text: "Findings"
+        href: findings.qmd
+      - text: "FAQ"
+        href: faq.qmd
+    right:
+      - icon: github
+        href: https://github.com/MUSA-550-Fall-2024/
+      - text: "Forest loss since you opened this page: <span id='navbar-total-acres'>0</span> acres"
+        href: "#"
+
+
+format:
+  html:
+    highlight-style: solarized
+    theme: flatly
+    css: styles.css
+    code-fold: true
+    code-copy: true
+    code-overflow: wrap
+    toc: true
+    include-after-body: _layouts/defaults.html
+    page-layout: full

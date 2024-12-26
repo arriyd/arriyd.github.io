@@ -1,0 +1,33 @@
+/* css styles */
+
+#countdown {
+  background-color: #333;
+  color: white;
+  padding: 2rem;
+  border-radius: 10px;
+  width: 750px;
+  margin: auto;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+#accumulation {
+  background-color: #333;
+  color: white;
+  padding: 2rem;
+  border-radius: 10px;
+  width: 750px;
+  margin: auto;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+#timer {
+  font-size: 4rem;
+  font-weight: bold;
+  color: #007bff;
+}
+
+#total-acres {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #007bff;
+}
